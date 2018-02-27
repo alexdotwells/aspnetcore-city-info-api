@@ -1,0 +1,10 @@
+/Users/artooce2/code/tuts/aspnet-core/CityInfo/CityInfo.API/bin/Debug/netcoreapp2.0/CityInfo.API.deps.json
+/Users/artooce2/code/tuts/aspnet-core/CityInfo/CityInfo.API/bin/Debug/netcoreapp2.0/CityInfo.API.runtimeconfig.json
+/Users/artooce2/code/tuts/aspnet-core/CityInfo/CityInfo.API/bin/Debug/netcoreapp2.0/CityInfo.API.runtimeconfig.dev.json
+/Users/artooce2/code/tuts/aspnet-core/CityInfo/CityInfo.API/bin/Debug/netcoreapp2.0/CityInfo.API.dll
+/Users/artooce2/code/tuts/aspnet-core/CityInfo/CityInfo.API/bin/Debug/netcoreapp2.0/CityInfo.API.pdb
+/Users/artooce2/code/tuts/aspnet-core/CityInfo/CityInfo.API/obj/Debug/netcoreapp2.0/CityInfo.API.csproj.CoreCompileInputs.cache
+/Users/artooce2/code/tuts/aspnet-core/CityInfo/CityInfo.API/obj/Debug/netcoreapp2.0/CityInfo.API.AssemblyInfoInputs.cache
+/Users/artooce2/code/tuts/aspnet-core/CityInfo/CityInfo.API/obj/Debug/netcoreapp2.0/CityInfo.API.AssemblyInfo.cs
+/Users/artooce2/code/tuts/aspnet-core/CityInfo/CityInfo.API/obj/Debug/netcoreapp2.0/CityInfo.API.dll
+/Users/artooce2/code/tuts/aspnet-core/CityInfo/CityInfo.API/obj/Debug/netcoreapp2.0/CityInfo.API.pdb
