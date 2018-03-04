@@ -50,15 +50,24 @@ namespace CityInfo.API.Controllers
                 return BadRequest();
             }
 
-            // Make sure City exists
+            if (pointOfInterest.Description == pointOfInterest.Name)
+            {
+                ModelState.AddModelError("Description", "The provided Description should be different from the Name.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
+
             if (city == null)
             {
                 return NotFound();
             }
 
-            // TEMP manual mapping
-            // Will be improved
+            // TEMP manual mapping - Will be improved
             var maxPointOfInterestId = CitiesDataStore.Current.Cities.SelectMany(
                              c => c.PointsOfInterest).Max(p => p.Id);
 
