@@ -1,3 +1,8 @@
 .DS_Store
 
 CityInfo.API/obj/Debug/netcoreapp2.0/CityInfo.API.csproj.CoreCompileInputs.cache
+CityInfo.API/bin/Debug/netcoreapp2.0/CityInfo.API.dll
+CityInfo.API/bin/Debug/netcoreapp2.0/CityInfo.API.pdb
+CityInfo.API/obj/Debug/netcoreapp2.0/CityInfo.API.dll
+CityInfo.API/obj/Debug/netcoreapp2.0/CityInfo.API.pdb
+CityInfo.API/obj/Debug/netcoreapp2.0/CityInfo.API.csproj.CoreCompileInputs.cache
