@@ -23,16 +23,25 @@ namespace CityInfo.API.Controllers
         }
         
         [HttpGet("{cityid}/pointsofinterest")]
-        public IActionResult GetPointsOfInterest(int cityid)
+        public IActionResult GetPointsOfInterest(int cityId)
         {
-            var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityid);
-
-            if (city == null)
+            try
             {
-                return NotFound();
-            }
+                var city = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == cityId);
 
-            return Ok(city.PointsOfInterest);
+                if (city == null)
+                {
+                    _logger.LogInformation($"City with id {cityId} wasn't found when accessing points of interest.");
+                    return NotFound();
+                }
+
+                return Ok(city.PointsOfInterest);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical($"Exception while getting points of interest for city with id {cityId}.", ex);
+                return StatusCode(500, "A problem happened while handling your request.");
+            }
         }
 
         [HttpGet("{cityid}/pointsofinterest/{id}")]
@@ -93,8 +102,7 @@ namespace CityInfo.API.Controllers
 
             city.PointsOfInterest.Add(finalPointOfInterest);
 
-            return CreatedAtRoute("GetPointOfInterest", new
-            { cityId = cityId, id = finalPointOfInterest.Id }, finalPointOfInterest);
+            return CreatedAtRoute("GetPointOfInterest", new { cityId = cityId, id = finalPointOfInterest.Id }, finalPointOfInterest);
         }
 
         [HttpPut("{cityId}/pointsofinterest/{id}")]
