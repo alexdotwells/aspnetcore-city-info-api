@@ -29,31 +29,42 @@ namespace CityInfo.API
             services.AddMvc()
                     .AddMvcOptions(o => o.OutputFormatters.Add(
                                     new XmlDataContractSerializerOutputFormatter()));
+                    //.AddJsonOptions(o => {
+                    //    if (o.SerializerSettings.ContractResolver != null)
+                    //    {
+                    //        var castedResolver = o.SerializerSettings.ContractResolver
+                    //            as DefaultContractResolver;
+                    //        castedResolver.NamingStrategy = null;
+                    //    }
+                    //});
 
-#if DEBUG
+        #if DEBUG
             services.AddTransient<IMailService, LocalMailService>();
-#else
+        #else
             services.AddTransient<IMailService, CloudMailService>();
-#endif
+        #endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            } 
+            }
+            else
+            {
+                app.UseExceptionHandler();
+            }
 
-            // Use Status Code Pages.
             app.UseStatusCodePages();
-            // Use MVC.
             app.UseMvc();
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Beep Bop Boop!");
+            //});
         }
     }
 }
